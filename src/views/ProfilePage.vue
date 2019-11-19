@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200 h-screen pt-8">
+  <div class="container mx-auto md:pt-8">
     <profile-info/>
   </div>
 </template>
@@ -8,17 +8,9 @@
 import ProfileInfo from '@/views/ProfileInfo.vue'
 
   export default {
-    name: 'profilepage',
+    name: 'profile-page',
     components: {
-    'profile-info': ProfileInfo
-    },
-    data() {
-      return {
-        src: 'https://data.whicdn.com/images/199999877/original.jpg'
-      }
+      ProfileInfo
     }
   }
 </script>
-
-<style lang="sass">
-</style>

@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import LoginPage from '../views/LoginPage.vue'
 import LoginForm from '../views/LoginPage.vue'
 import ProfilePage from '../views/ProfilePage.vue'
 
@@ -10,28 +9,13 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: LoginPage,
-    // meta: { requiresAuth: true },
-    beforeEnter (to, from, next) {
-      if (localStorage.getItem('email') != '' && localStorage.getItem('password') != '') {
-        next('/profile')
-      } else {
-        next('/login')
-      }
-    }
+    redirect: '/profile'
   },
   {
     path: '/profile',
     name: 'profile',
     component: ProfilePage,
-    // meta: { requiresAuth: true },
-    beforeEnter (to, from, next) {
-      if (localStorage.getItem('email') != '' && localStorage.getItem('password') != '') {
-        next()
-      } else {
-        next('/login')
-      }
-    }
+    meta: { requiresAuth: true }
   },
   {
     path: '/login',
@@ -44,6 +28,19 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  let flag = JSON.parse(localStorage.getItem('flag'))
+  if (to.meta.requiresAuth) {
+    if (flag) {
+      next()
+    } else {
+      next('/login')
+    }
+  } else {
+    next()
+  }
 })
 
 
