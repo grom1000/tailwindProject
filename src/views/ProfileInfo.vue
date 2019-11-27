@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <div class="text-center text-xl my-2 md:mt-8 md:mb-4 md:text-2xl">
+        <div class="text-center md:text-left text-xl my-2 md:mt-8 md:mb-4 md:text-2xl">
             About
         </div>
         <div class="md:flex">
@@ -124,7 +124,7 @@
                 </div>
             </div>
         </div>
-        <div class="text-center text-xl my-2 md:mt-8 md:mb-4 md:text-2xl">
+        <div class="text-center md:text-left text-xl my-2 md:mt-8 md:mb-4 md:text-2xl">
             Interest
         </div>
         <div class="bg-white md:px-8 py-6">
