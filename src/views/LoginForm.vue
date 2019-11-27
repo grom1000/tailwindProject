@@ -11,7 +11,7 @@
             </div>
             <div class="text-center">
                 <button
-                class="bg-green-700 text-lg rounded-full py-1 px-4 text-white mb-16 w-32 h-12 hover:bg-green-600 focus:outline-none"
+                class="bg-blue-700 text-lg rounded-full py-1 px-4 text-white mb-16 w-32 h-12 hover:bg-blue-600 focus:outline-none"
                 @click.prevent="login"
                 :disabled="!email || !password"
                 >sign in</button>
@@ -32,9 +32,9 @@
         methods: {
             login () {
                 if (this.email != '' && this.password != '') {
-                    localStorage.setItem('flag', true)
+                    localStorage.setItem('flag', "enter")
                 } else {
-                    localStorage.setItem('flag', false)
+                    localStorage.setItem('flag', '')
                 }
                 this.$router.push('/')
             }
