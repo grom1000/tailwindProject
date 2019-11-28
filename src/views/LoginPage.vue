@@ -40,7 +40,7 @@ export default {
   },
   beforeRouteEnter: (to, from, next) => {
     let flag = localStorage.getItem('flag')
-    if (flag == '') {
+    if (flag === null) {
       next()
     } else {
       next('/')

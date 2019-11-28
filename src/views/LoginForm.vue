@@ -32,9 +32,9 @@
         methods: {
             login () {
                 if (this.email != '' && this.password != '') {
-                    localStorage.setItem('flag', "enter")
+                    localStorage.setItem('flag', "true")
                 } else {
-                    localStorage.setItem('flag', '')
+                    localStorage.setItem('flag', 'false')
                 }
                 this.$router.push('/')
             }
