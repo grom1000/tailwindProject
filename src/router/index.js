@@ -31,8 +31,8 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  let flag = JSON.parse(localStorage.getItem('flag'))
-  // let flag = localStorage.getItem('flag')
+  // let flag = JSON.parse(localStorage.getItem('flag'))
+  let flag = localStorage.getItem('flag')
   if (to.meta.requiresAuth) {
     if (flag) {
       next()
