@@ -14,7 +14,7 @@
                         <img class="w-40" :src="user.creditplus" alt="Diprella">
                     </div>
                 </div>
-                <div class="text-base">Age: {{ user.age }}</div>
+                <div class="text-base !red-text">Age: {{ user.age }}</div>
                 <div class="text-base break-all">From: {{ user.from }}</div>
                 <div class="text-base mb-6 break-all">Company: {{ user.company }}</div>
                 <div class="border-b-2 border-grey-200"></div>
