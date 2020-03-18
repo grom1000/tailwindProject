@@ -1,5 +1,21 @@
 /* purgecss start ignore */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
+.theme-light {
+    --bg-background-primary: white;
+    --bg-background-secondary: #f7fafc;
+    --bg-background-ternary: #e2e8f0;
+
+    --text-copy-primary: #2d3748;
+}
+.theme-dark {
+    --bg-background-primary: #0d2438;
+    --bg-background-secondary: #102c44;
+    --bg-background-ternary: #1e3951;
+
+    --text-copy-primary: white;
+}
+
 /* purgecss end ignore */
 @import "tailwindcss/utilities";
+

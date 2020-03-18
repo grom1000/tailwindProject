@@ -10,7 +10,7 @@ module.exports = {
         './src/**/*.jsx',
         './src/**/*.scss',
       ],
-      css: ['./src/**/*.scss'],
+      // css: ['./src/**/*.scss'],
       whitelist: ['!red-text'], //Пример с переменной, находящейся в style.scss//
       defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
     })

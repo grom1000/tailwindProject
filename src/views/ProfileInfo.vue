@@ -1,6 +1,8 @@
 <template>
     <div>
-        <div class="md:flex bg-white px-12 md:px-8 lg:px-16 py-6 md:py-8">
+        <a @click.prevent="toggleTheme" class="cursor-pointer">Switch</a>
+        <div class="md:flex bg-background-primary px-12 md:px-8 lg:px-16 py-6 md:py-8 text-copy-primary"
+        :class='theme'>
             <div class="flex justify-center self-start px-4 md:mr-6 md:flex-shrink-0">
                 <img class="rounded-full w-48 md:flex-none" :src="user.src" alt="Фото" />
             </div>
@@ -200,10 +202,18 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            user: {}
+            user: {},
+            theme: 'theme-light'
+        }
+    },
+    methods: {
+        toggleTheme() {
+            this.theme = this.theme === 'theme-light' ? 'theme-dark' : 'theme-light'
+            localStorage.setItem('theme', this.theme)
         }
     },
     created() {
+            this.theme = localStorage.getItem('theme')
             axios
                 .get('/user/user.json')
                 .then(response => (this.user = response.data))
@@ -211,3 +221,4 @@ export default {
     }
 }
 </script>
+
